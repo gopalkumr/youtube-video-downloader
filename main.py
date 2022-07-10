@@ -14,17 +14,15 @@ if detans == "yes":
 t.sleep(.3)
 print("video is availble in three diffrent mode: \n 1. highest quality \n2.Lowest quality \n 3.audio ")
 valueofk = input("enter the mode you want to download: (eg. highest quality, lowest quality, audio) :").lower()
-if valueofk == "highest quality":
+valueofk == str(valueofk)
+if valueofk == "highest quality" or valueofk == "1":
     video.streams.get_highest_resolution().download()
     print("downloaded at highest quality, check the folder: ")
-elif valueofk == "lowest quality".lower():
+elif valueofk == "lowest quality" or valueofk == "2".lower():
     video.streams.get_lowest_resolution().download()
     print("downloaded at lowest quality, check the folder: ")
-elif valueofk == "audio":
+elif valueofk == "audio" or valueofk == "3":
     video.streams.get_audio_only().download()
     print("downloaded at audio quality, check the folder: ")
 else:
     print("enter some value ")
-
-
-
